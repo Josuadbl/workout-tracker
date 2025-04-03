@@ -1,1 +1,15 @@
-console.log("workout-tracker app");
+const express = require('express');
+const { port } = require('./config/env');
+const app = express();
+
+
+app.get("/", (req, res) => {
+    res.send("Hola mi server en Express");
+});
+
+app.get('/about', (req, res) => {
+    res.send("pagina de informacion");
+});
+  app.listen(port, () => {
+    console.log(`Servidor corriendo en http://localhost:${port}`);
+});
